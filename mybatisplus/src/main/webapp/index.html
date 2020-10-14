@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!--<script src="js/cross.js"></script>-->
+</head>
+<body>
+<div id="box">
+    <iframe id="f"></iframe>
+</div>
+<a href="xx">跳转</a>
+
+<script>
+
+   $(function(){
+       //页面 （非跨域，仅仅是改变src属性）
+       // $.ajax({
+       //     url : '/xx',
+       //     type : 'post',
+       //     dataType : 'text',
+       //     success : function(result){
+       //         //$("#box").html(result);
+       //         alert(result);
+       //         $("#f").attr("src","https://www.baidu.com")
+       //     }
+       // });
+
+       //跨域获取json
+       $.ajax({
+           url:"http://localhost:8080/xx",
+           dataType:'jsonp',
+           data:'',
+           type:"get",
+           jsonp:'callback222',
+           jsonpCallback:'getData',
+           success:function(data) {
+              console.info(data);
+           }
+
+       });
+   })
+</script>
+</body>
+</html>
