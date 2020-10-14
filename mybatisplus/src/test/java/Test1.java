@@ -48,6 +48,7 @@ public class Test1 {
         user2.setUsername("二号");
         userMapper.updateById(user1);
         userMapper.updateById(user2);
+        System.out.println(11111);
     }
 
 
